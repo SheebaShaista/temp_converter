@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Temperature Conversions</title>
+    <style>
+      div {
+        background-color: lavender;
+        width: 300px;
+        border: 5px solid black;
+        padding: 50px;
+        margin: 20px;
+      }
+      .corners {
+        border-radius: 25px;
+        background-position: left top;
+        background-repeat: repeat;
+        padding: 60px ;
+        width: 320px;
+        height: 150px;
+        margin-left:auto;
+        margin-right:auto;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="#">
+        <div class="corners">
+          <h3>Temperature Conversion</h3>
+          <p> Celsius <input id="celsius" onkeyup="convert('Celsius')"></p>
+          <p>Fahrenheit <input id="fahrenheit" onkeyup="convert('Fahrenheit')"></p>
+      </div>
+    </form>
+    <script>
+function convert(degree) {
+  var x;
+  if (degree == "Celsius") {
+    x = document.getElementById("celsius").value * 9 / 5 + 32;
+    document.getElementById("fahrenheit").value = Math.round(x);
+  } else {
+    x = (document.getElementById("fahrenheit").value -32) * 5 / 9;
+    document.getElementById("celsius").value = Math.round(x);
+  }
+}
+</script>
+  </body>
+</html>
